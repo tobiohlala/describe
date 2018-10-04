@@ -1,7 +1,5 @@
 # describe
 
-## Synopsis
-
 query word definitions from Oxford Dictionaries API
 
 ## Description
