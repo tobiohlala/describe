@@ -1,7 +1,7 @@
 # describe
 query word definitions from Oxford Dictionaries API
 
-### Installation
+## Installation
 
 In order to make the script work you first have to register a (free) developer account at [Oxford Dictionaries](https://developer.oxforddictionaries.com/) to obtain an APP ID and APP KEY.
 
@@ -31,7 +31,7 @@ if you placed the script in /opt/scripts before:
 sudo ln -s /opt/scripts/describe.sh /usr/local/bin/describe
 ```
 
-### Usage
+## Usage
 
 To query for a words definition simply pass it as an argument to the script.
 
