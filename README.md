@@ -1,6 +1,10 @@
 # describe
 query word definitions from Oxford Dictionaries API
 
+## Description
+
+a small shell script for quickly looking up a words meaning, synonyms or antonyms from the console.
+
 ## Installation
 
 In order to make the script work you first have to register a (free) developer account at [Oxford Dictionaries](https://developer.oxforddictionaries.com/) to obtain an APP ID and APP KEY.
@@ -33,7 +37,7 @@ sudo ln -s /opt/scripts/describe.sh /usr/local/bin/describe
 
 ## Usage
 
-To query for a words definition simply pass it as an argument to the script.
+To query for a words definition simply pass it as an argument to the script
 
 ```bash
 $ describe tiny
@@ -76,6 +80,15 @@ $ describe --antonyms tiny
 
 huge
 significant
+```
+
+You can also obtain definitions for more than one word at the same time
+
+```bash
+$ describe tiny kitten
+
+tiny [ˈtʌɪni] is very small
+kitten [ˈkɪt(ə)n] is a young cat
 ```
 
 ## Requirements
