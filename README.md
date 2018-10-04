@@ -5,7 +5,7 @@ query word definitions from Oxford Dictionaries API
 
 In order to make the script work you first have to register a (free) developer account at [Oxford Dictionaries](https://developer.oxforddictionaries.com/) to obtain an APP ID and APP KEY.
 
-Now within the script replace the APP_ID and APP_KEY placeholders with your own app id and app key preserving the quotation marks, e.g.
+Now within the script replace the _APP_ID_ and _APP_KEY_ placeholders with your own app id and app key preserving the quotation marks, e.g.
 
 change
 
@@ -21,9 +21,9 @@ app_id="12345"
 app_key="1234567890"
 ```
 
-where 12345 matches your app id and 1234567890 matches your app key and you're good to go!
+where _12345_ matches your app id and _1234567890_ your app key.
 
-Optionally, create a symlink to the script to a location contained in your PATH (like /usr/bin or /usr/local/bin) to make it conveniently executable from everywhere, e.g.
+Optionally, create a symlink to the script to a location contained in your PATH like _/usr/bin_ or _/usr/local/bin_ to make it conveniently executable from everywhere, e.g.
 
 if you placed the script in /opt/scripts before:
 
