@@ -82,7 +82,7 @@ huge
 significant
 ```
 
-You can also obtain definitions for more than one word at the same time
+You can also obtain definitions for more than one word at once
 
 ```bash
 $ describe tiny kitten
