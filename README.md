@@ -77,3 +77,9 @@ $ describe --antonyms tiny
 huge
 significant
 ```
+
+## Requirements
+
+`curl`
+`jq`
+`sed`
