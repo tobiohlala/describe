@@ -4,7 +4,7 @@ query word definitions from Oxford Dictionaries API
 
 ## Description
 
-a small shell script for quickly looking up a words meaning, synonyms or antonyms from the console.
+a small shell script for quickly looking up a words meaning, synonyms or antonyms from within the console.
 
 ## Installation
 
