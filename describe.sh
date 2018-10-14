@@ -32,13 +32,32 @@
 #requires   curl, jq
 
 
-app_id="APP_ID"
-app_key="APP_KEY"
+
+if [ -f ~/.config/describe ]; then
+
+    . ~/.config/describe
+
+else
+    echo "ERROR: missing configuration file. see README for further instructions."
+    exit 1
+fi
+
+if [ -z ${app_id+x} ]; then
+    echo "ERROR: couldn't read appid from configuration file. see README for further instructions"
+    exit 1
+fi
+
+if [ -z ${app_key+x} ]; then
+    echo "ERROR: couldn't read appkey from configuration file. see README for further instructions"
+    exit 1
+fi
+
+
 
 base_url="https://od-api.oxforddictionaries.com/api/v1"
 
-
 words=()
+
 
 function usage {
     echo "usage: $0 [-aes] word"
