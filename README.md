@@ -10,7 +10,7 @@ a small shell script for quickly looking up a words meaning, synonyms or antonym
 
 ## Installation
 
-In order to make the script work you first have to register a (free) developer account at [Oxford Dictionaries](https://developer.oxforddictionaries.com/) to obtain an APP ID and APP KEY.
+In order to make the script work you first have to register a (free) developer account at [Oxford Dictionaries](https://developer.oxforddictionaries.com/) to obtain an __app id__ and __app key__.
 
 Now within the script replace the `APP_ID` and `APP_KEY` placeholders with your own app id and app key preserving the quotation marks, e.g.
 
