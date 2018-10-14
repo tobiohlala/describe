@@ -2,6 +2,8 @@
 
 query word definitions from Oxford Dictionaries API
 
+![](https://i.imgur.com/7B4HKZi.png)
+
 ## Description
 
 a small shell script for quickly looking up a words meaning, synonyms or antonyms from within the console.
@@ -10,7 +12,7 @@ a small shell script for quickly looking up a words meaning, synonyms or antonym
 
 In order to make the script work you first have to register a (free) developer account at [Oxford Dictionaries](https://developer.oxforddictionaries.com/) to obtain an APP ID and APP KEY.
 
-Now within the script replace the _APP_ID_ and _APP_KEY_ placeholders with your own app id and app key preserving the quotation marks, e.g.
+Now within the script replace the `APP_ID` and `APP_KEY` placeholders with your own app id and app key preserving the quotation marks, e.g.
 
 change
 
@@ -28,7 +30,7 @@ app_key="1234567890"
 
 where _12345_ matches your app id and _1234567890_ your app key.
 
-Optionally, create a symlink to the script to a location contained in your PATH like _/usr/bin_ or _/usr/local/bin_ to make it conveniently executable from everywhere, e.g.
+Optionally, create a symlink to the script to a location contained in your path like _/usr/bin_ or _/usr/local/bin_ to make it conveniently executable from everywhere, e.g.
 
 if you placed the script in /opt/scripts before:
 
