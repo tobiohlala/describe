@@ -40,6 +40,15 @@ base_url="https://od-api.oxforddictionaries.com/api/v1"
 
 words=()
 
+function usage {
+    echo "usage: $0 [-aes] word"
+    echo -e "  -s|--synonyms\t\tprint synonyms"
+    echo -e "  -a|--antonyms\t\tprint antonyms"
+    echo -e "  -e|--emphasize\temphasize output"
+    echo -e "  -h|--help\t\tprint this help"
+    exit 1
+}
+
 while [[ $# -gt 0 ]]; do
 
     case "$1" in
@@ -51,9 +60,15 @@ while [[ $# -gt 0 ]]; do
             ANTONYMS=YES
             shift
             ;;
+        -e|--emphasize)
+            EMPHASIZE=YES
+            shift
+            ;;
+        -h|--help)
+            usage
+            ;;
         -*)
-            echo "unknown argument: $1" >&2
-            exit 1
+            usage
             ;;
         *)
             words+=("$1")
@@ -105,7 +120,11 @@ for word in "${words[@]}"; do
     | head -n 1\
     | sed 's/\"//g')
 
-    echo "$word [$phoneticSpelling] is $description"
+    if [[ "$EMPHASIZE" == YES ]]; then
+        echo -e "\033[1m$word\033[0;0m \033[2m[$phoneticSpelling]\033[0;0m is $description"
+    else
+        echo "$word [$phoneticSpelling] is $description"
+    fi
 
 done
 
