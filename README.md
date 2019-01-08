@@ -6,23 +6,23 @@ query word definitions from Oxford Dictionaries API
 
 ## Description
 
-a small shell script for quickly looking up a words meaning, synonyms or antonyms from within the console.
+a small shell script for quickly looking up a words meaning, synonyms or antonyms from within the terminal.
 
 ## Installation
 
 In order to make the script work you first have to register a (free) developer account at [Oxford Dictionaries](https://developer.oxforddictionaries.com/) to obtain an `app id` and `app key`.
 
-You then have to create a configuration file called `~/.config/describe` and place your `app id` and `app key` in it like so:
+Then create a configuration file called `~/.config/describe` and place your `app id` and `app key` in it like so:
 
 ```bash
 app_id=<YOUR_APP_ID>
 app_key=<YOUR_APP_KEY>
 ```
-Of course, substitute `<YOUR_APP_ID>` with your real `app id`  and `<YOUR_APP_KEY>` with your real `app key`.
+substituting `<YOUR_APP_ID>` with your real `app id`  and `<YOUR_APP_KEY>` with your real `app key`.
 
-Optionally, create a symlink to the script to a location contained in your path like _/usr/bin_ or _/usr/local/bin_ to make it conveniently executable from everywhere, e.g.
+Optionally, create a symlink to the script in a location contained in your path like _/usr/bin_ or _/usr/local/bin_ to make it conveniently executable from everywhere, e.g.
 
-if you placed the script in /opt/scripts before:
+if you placed the script in _/opt/scripts before_:
 
 ```bash
 sudo ln -s /opt/scripts/describe.sh /usr/local/bin/describe
