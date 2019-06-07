@@ -8,11 +8,15 @@ query word definitions from Oxford Dictionaries API
 
 a small shell script for quickly looking up a words meaning, synonyms or antonyms from within the terminal.
 
+## API Deprecation Warning
+
+Oxford Dictionaries API version 1 will be deprecated on **June 30, 2019** in favor of version 2. As a consequence you will have to update the script to version 2.0 as well as your accounts from _Free_ to _Prototype_ (unpaid) or _Developer_ (paid) to continue using `describe`. Unfortunately, **unpaid accounts won't be authorized to query for synonyms and antonyms** anymore. You will still be able to fetch the definitions, though.
+
 ## Installation
 
-In order to make the script work you first have to register a (free) developer account at [Oxford Dictionaries](https://developer.oxforddictionaries.com/) to obtain an `app id` and `app key`.
+In order to make the script work you first have to register a (free) ~~developer~~ Prototype account at [Oxford Dictionaries](https://developer.oxforddictionaries.com/) to obtain an `app id` and `app key`. In order to make `--synonyms` and `--antonyms` work you will have to update to the paid Developer plan.
 
-Then create a configuration file called `~/.config/describe` and place your `app id` and `app key` in it like so:
+Create a configuration file called `~/.config/describe` and place your `app id` and `app key` in it like so:
 
 ```bash
 app_id=<YOUR_APP_ID>
