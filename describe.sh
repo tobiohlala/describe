@@ -32,11 +32,10 @@
 #requires   curl, jq
 
 
+base_url="https://od-api.oxforddictionaries.com/api/v2"
 
 if [ -f ~/.config/describe ]; then
-
     . ~/.config/describe
-
 else
     echo "ERROR: missing configuration file. see README for further instructions."
     exit 1
@@ -52,13 +51,6 @@ if [ -z ${app_key+x} ]; then
     exit 1
 fi
 
-
-
-base_url="https://od-api.oxforddictionaries.com/api/v1"
-
-words=()
-
-
 function usage {
     echo "usage: $0 [-aes] word"
     echo -e "  -s|--synonyms\t\tprint synonyms"
@@ -68,9 +60,8 @@ function usage {
     exit 1
 }
 
-
+words=()
 while [[ $# -gt 0 ]]; do
-
     case "$1" in
         -s|--synonyms)
             SYNONYMS=YES
@@ -95,40 +86,31 @@ while [[ $# -gt 0 ]]; do
             shift
             ;;
     esac
-
 done
 
 
 
 for word in "${words[@]}"; do
-
     # print synonyms
-
+    # ONLY AVAILABLE ON DEVELOPER PLANS
     if [[ "$SYNONYMS" == YES ]]; then
-
-        curl -s -X GET -H "app_id: $app_id" -H "app_key: $app_key" "$base_url/entries/en/$word/synonyms"\
+        curl -s -X GET -H "app_id: $app_id" -H "app_key: $app_key" "$base_url/thesaurus/en/$word?fields=synonyms"\
         | jq '.results[].lexicalEntries[].entries[].senses[].synonyms[].text' 2>/dev/null\
         | sed 's/\"//g'
-
 	exit 0
-
     fi
 
     # print antonyms
-
+    # ONLY AVAILABLE ON DEVELOPER PLANS
     if [[ "$ANTONYMS" == YES ]]; then
-
-        curl -s -X GET -H "app_id: $app_id" -H "app_key: $app_key" "$base_url/entries/en/$word/antonyms"\
+        curl -s -X GET -H "app_id: $app_id" -H "app_key: $app_key" "$base_url/thesaurus/en/$word?fields=antonyms"\
         | jq '.results[].lexicalEntries[].entries[].senses[].antonyms[].text' 2>/dev/null\
         | sed 's/\"//g'\
-
 	exit 0
-
     fi
 
     # print definition
-
-    result=$(curl -s -X GET -H "app_id: $app_id" -H "app_key: $app_key" "$base_url/entries/en/$word")
+    result=$(curl -s -X GET -H "app_id: $app_id" -H "app_key: $app_key" "$base_url/entries/en-us/$word")
 
     phoneticSpelling=$(echo $result\
     | jq '.results[].lexicalEntries[].pronunciations[].phoneticSpelling' 2>/dev/null\
@@ -145,7 +127,6 @@ for word in "${words[@]}"; do
     else
         echo "$word [$phoneticSpelling] is $description"
     fi
-
 done
 
 
