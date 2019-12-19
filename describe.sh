@@ -114,7 +114,7 @@ for word in "${words[@]}"; do
 
     phoneticSpelling=$(echo $result\
     | jq '.results[].lexicalEntries[].pronunciations[].phoneticSpelling' 2>/dev/null\
-    | head -n 1\
+    | awk '{if (NR == 2) print $0}'\
     | sed 's/\"//g')
 
     description=$(echo $result\
